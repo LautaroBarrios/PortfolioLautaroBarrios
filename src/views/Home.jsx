@@ -1,6 +1,30 @@
+import { useState, useEffect } from "react";
 import { Lights } from "../components";
+import { DoubleArrowDown } from "../icons";
 
 const Home = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowButton(true);
+    }, 3000);
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 3000);
+
+    const handleScroll = () => {
+      setShowButton(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="flex flex-col items-center justify-center w-full lg:h-screen h-[100dvh] md:p-0 p-4 bg-[radial-gradient(circle,_#ffffff_50%,_#040d0e_100%)]">
       <Lights />
@@ -12,12 +36,23 @@ const Home = () => {
           <button className="text-xl text-center text-gray-100 underline underline-offset-4 hover:animate-pulse">
             CREATIVE FULLSTACK DEVELOPER
           </button>
-          <h2 className="text-center sm:text-base text-sm text-gray-100 cursor-default">
+          <p className="text-center sm:text-base text-sm text-gray-100 cursor-default">
             {/* TÚ VISIÓN DIGITAL, HECHA REALIDAD.  */}
             YOUR DIGITAL VISION, MADE REALITY.
-          </h2>
+          </p>
         </div>
       </article>
+      {showButton && (
+        <button
+          type="button"
+          className="absolute bottom-0 p-4 active:animate-pulse animate-fadeIn"
+          onClick={() => {
+            setShowButton(false);
+          }}
+        >
+          <DoubleArrowDown />
+        </button>
+      )}
     </section>
   );
 };

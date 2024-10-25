@@ -1,5 +1,4 @@
+import AboutMe from "./AboutMe.jsx";
 import Home from "./Home.jsx";
 
-export {
-  Home,
-};
+export { AboutMe, Home };

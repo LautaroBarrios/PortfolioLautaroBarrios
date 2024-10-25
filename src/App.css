@@ -1,7 +1,15 @@
 /* ----------Fonts---------- */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/Fonts/Orbitron/static/Orbitron-Bold.ttf")
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Bold.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OrbitronMedium";
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -10,6 +18,32 @@
 body {
   font-family: "Orbitron", sans-serif;
   text-shadow: 0 0 5px #000000;
+}
+
+button{
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 5px #000000;
+}
+
+.orbi-font {
+  font-family: "OrbitronMedium", sans-serif;
+}
+
+/* ----------Scrollbar Styles---------- */
+
+::-webkit-scrollbar {
+  background-color: rgba(11, 95, 99, 0.966);
+  width: 10px;
+  border: 3.5px solid #373f40;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0c7075;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 /* ----------Animations---------- */
