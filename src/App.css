@@ -17,7 +17,7 @@
 
 body {
   font-family: "Orbitron", sans-serif;
-  text-shadow: 0 0 5px #000000;
+  /* text-shadow: 0 0 5px #000000; */
 }
 
 button{
@@ -57,8 +57,18 @@ button{
     opacity: 1;
   }
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .animate-fadeInFast {
-  animation: fadeIn 1s forwards;
+  animation: fadeIn 0.5s forwards;
 }
 
 .animate-fadeIn {
@@ -67,6 +77,10 @@ button{
 
 .animate-fadeInMedium {
   animation: fadeIn 3s forwards;
+}
+
+.animate-fadeOutFast {
+  animation: fadeOut 0.5s forwards;
 }
 
 /* Background Lampyridae */
