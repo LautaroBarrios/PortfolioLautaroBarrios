@@ -66,7 +66,7 @@ const AboutMe = ({ changeModal }) => {
             </button>
           </div>
 
-          <div className="flex md:flex-row flex-col md:space-x-4 space-x-0 md:space-y-0 space-y-4 md:items-start items-center justify-center">
+          <div className="flex xl:flex-row flex-col xl:space-x-4 space-x-0 xl:space-y-0 space-y-4 xl:items-start items-center justify-center">
             <div className="flex flex-col items-center w-full">
               <img
                 src={PictureProfile}
