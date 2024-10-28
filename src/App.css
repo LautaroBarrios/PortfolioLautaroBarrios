@@ -57,6 +57,9 @@ button{
     opacity: 1;
   }
 }
+.animate-fadeInFast {
+  animation: fadeIn 1s forwards;
+}
 
 .animate-fadeIn {
   animation: fadeIn 2.5s forwards;
