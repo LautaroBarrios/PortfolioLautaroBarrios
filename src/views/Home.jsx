@@ -6,7 +6,7 @@ const Home = ({ changeModal }) => {
 
   setTimeout(() => {
     setShowButton(true);
-  }, 1500);
+  }, 2100);
 
   return (
     <section className="flex flex-col items-center justify-center w-full lg:h-screen h-[100dvh] md:p-0 p-4 bg-[radial-gradient(circle,_#f7f9fa_50%,_#040d0e_100%)] animate-fadeInFast">
