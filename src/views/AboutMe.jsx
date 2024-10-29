@@ -39,7 +39,7 @@ const AboutMe = ({ changeModal }) => {
     if (isClosing) {
       const timer = setTimeout(() => {
         changeModal("");
-      }, 500);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [isClosing, changeModal]);
@@ -66,7 +66,7 @@ const AboutMe = ({ changeModal }) => {
             </button>
           </div>
 
-          <div className="flex xl:flex-row flex-col xl:space-x-4 space-x-0 xl:space-y-0 space-y-4 xl:items-start items-center justify-center">
+          <div className="flex xl:flex-row flex-col xl:space-x-4 space-x-0 xl:space-y-0 space-y-3 xl:items-start items-center justify-center">
             <div className="flex flex-col items-center w-full">
               <img
                 src={PictureProfile}
@@ -95,20 +95,16 @@ const AboutMe = ({ changeModal }) => {
                 </a>
               </article>
             </div>
-            <div className="flex flex-col justify-between items-end md:pr-2">
+            <div className="flex flex-col justify-between items-end md:pr-2 text-sm">
               <p className="orbi-font">
-                Programador residente en Córdoba, Argentina al que le apasiona
-                transformar retos complejos en soluciones de diseño sencillas,
-                elegantes y efectivas.
+                Desarrollador de Córdoba, Argentina, entusiasta de convertir
+                desafíos complejos en soluciones de diseño simples, elegantes y
+                efectivas.
               </p>
               <p className="orbi-font">
-                Su trabajo va desde interfaces digitales, experiencias
-                interactivas, automatización de procesos, la convergencia de
-                diseño y tecnología.
-              </p>
-              <p className="orbi-font">
-                Posee conocimientos y experiencia en metodologías ágiles,
-                estructuras de datos, algoritmos, frameworks.
+                Desde interfaces digitales y experiencias
+                interactivas hasta la automatización de procesos y la
+                integración de diseño con tecnología.
               </p>
             </div>
           </div>

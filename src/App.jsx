@@ -12,7 +12,7 @@ function App() {
     <section className="flex flex-col h-full w-full items-center justify-center bg-[#051314]">
       <Home changeModal={changeModal} />
       {showModal === "aboutMe" && <AboutMe changeModal={changeModal} />}
-      {/* <Projects /> */}
+      {/* {showModal === "projects" && <Projects changeModal={changeModal} />} */}
     </section>
   );
 }

@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         "my-background": "url('/src/assets/FOTO.png')",
       },
+      screens: {
+        s: "300px",
+      },
     },
   },
   plugins: [],

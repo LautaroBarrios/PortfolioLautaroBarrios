@@ -80,7 +80,7 @@ button{
 }
 
 .animate-fadeOutFast {
-  animation: fadeOut 0.5s forwards;
+  animation: fadeOut 0.3s forwards;
 }
 
 /* Background Lampyridae */
