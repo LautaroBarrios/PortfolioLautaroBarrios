@@ -34,7 +34,7 @@ button{
 ::-webkit-scrollbar {
   background-color: rgba(11, 95, 99, 0.966);
   width: 10px;
-  border: 3.5px solid #373f40;
+  border: 3.5px solid #040e0f;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -68,7 +68,7 @@ button{
 }
 
 .animate-fadeInFast {
-  animation: fadeIn 0.5s forwards;
+  animation: fadeIn 0.3s forwards;
 }
 
 .animate-fadeIn {
