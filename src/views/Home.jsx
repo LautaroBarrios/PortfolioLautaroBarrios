@@ -24,9 +24,18 @@ const Home = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => changeModal("projects")}
-          className="absolute border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-10 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full transition-all"
+          className="absolute border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-28 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full transition-all"
         >
           Projects
+        </button>
+      )}
+      {showButton && (
+        <button
+          type="button"
+          onClick={() => changeModal("contact")}
+          className="absolute border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-10 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full transition-all"
+        >
+          Contact
         </button>
       )}
 

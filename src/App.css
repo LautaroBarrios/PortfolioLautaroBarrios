@@ -17,12 +17,6 @@
 
 body {
   font-family: "Orbitron", sans-serif;
-  /* text-shadow: 0 0 5px #000000; */
-}
-
-button{
-  font-family: "Orbitron", sans-serif;
-  text-shadow: 0 0 5px #000000;
 }
 
 .orbi-font {
@@ -72,7 +66,7 @@ button{
 }
 
 .animate-fadeIn {
-  animation: fadeIn 2.5s forwards;
+  animation: fadeIn 2s forwards;
 }
 
 .animate-fadeInMedium {

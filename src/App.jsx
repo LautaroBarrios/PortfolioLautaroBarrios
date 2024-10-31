@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AboutMe, Home, Projects } from "./views/index.js";
+import { AboutMe, Contact, Home, Projects } from "./views/index.js";
 
 function App() {
   const [showModal, setShowModal] = useState("");
@@ -13,6 +13,7 @@ function App() {
       <Home changeModal={changeModal} />
       {showModal === "aboutMe" && <AboutMe changeModal={changeModal} />}
       {showModal === "projects" && <Projects changeModal={changeModal} />}
+      {showModal === "contact" && <Contact changeModal={changeModal} />}
     </section>
   );
 }
