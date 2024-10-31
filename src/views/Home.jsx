@@ -45,7 +45,11 @@ const Home = ({ changeModal }) => {
           {/* SOY LAUTARO BARRIOS */}
         </h1>
         <div className="flex flex-col items-center justify-center w-full space-y-1 animate-fadeInMedium">
-          <button className="sm:text-xl s:text-lg text-base text-center text-gray-100 font-bold underline underline-offset-4">
+          <button
+            type="button"
+            className="sm:text-xl s:text-lg text-base text-center text-gray-100 font-bold underline underline-offset-4"
+            onClick={() => changeModal("contact")}
+          >
             FULLSTACK DEVELOPER
           </button>
           <p className="text-center sm:text-base text-sm text-gray-100 font-bold cursor-default">
