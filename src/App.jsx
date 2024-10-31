@@ -9,7 +9,7 @@ function App() {
   };
 
   return (
-    <section className="flex flex-col h-full w-full items-center justify-center bg-[#051314]">
+    <section className="flex flex-col h-full w-full items-center justify-center bg-[#051314] overflow-hidden">
       <Home changeModal={changeModal} />
       {showModal === "aboutMe" && <AboutMe changeModal={changeModal} />}
       {showModal === "projects" && <Projects changeModal={changeModal} />}

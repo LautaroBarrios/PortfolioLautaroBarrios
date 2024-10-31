@@ -1,22 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import PictureProfile from "../assets/images/PhotoProfile.png";
-import { Close, GitHub, Gmail, LinkedIn } from "../icons";
+import { Close, GitHub, LinkedIn } from "../icons";
 
 const AboutMe = ({ changeModal }) => {
   const modalRef = useRef(null);
   const [isClosing, setIsClosing] = useState(false);
-
-  // const [message, setMessage] = useState("");
-  // const copyText = () => {
-  //   const text = "barrios.g.lautaro@gmail.com";
-  //   navigator.clipboard
-  //     .writeText(text)
-  //     .then(() => {
-  //       setMessage("Texto copiado!");
-  //       setTimeout(() => setMessage(""), 2000);
-  //     })
-  //     .catch((err) => console.error("Error al copiar el texto:", err));
-  // };
 
   const closeModal = () => {
     setIsClosing(true);
@@ -71,7 +59,7 @@ const AboutMe = ({ changeModal }) => {
               <img
                 src={PictureProfile}
                 alt="Foto de perfil"
-                className="h-40 w-40  rounded-full border-white hover:scale-110 transition-all bg-[#0c7075]"
+                className="h-40 w-40  rounded-full border-white hover:scale-110 transition-all bg-[#0c7075] animate-fadeIn"
               />
               <article className="flex flex-row space-x-4 items-center justify-center pt-3">
                 <a
@@ -102,53 +90,12 @@ const AboutMe = ({ changeModal }) => {
                 efectivas.
               </p>
               <p className="orbi-font">
-                Desde interfaces digitales y experiencias
-                interactivas hasta la automatización de procesos y la
-                integración de diseño con tecnología.
+                Desde interfaces digitales y experiencias interactivas hasta la
+                automatización de procesos y la integración de diseño con
+                tecnología.
               </p>
             </div>
           </div>
-
-          {/* <article className="flex flex-col items-center justify-center bg-[#0c7075] shadow p-1 rounded-md">
-            {message && (
-              <div className="bg-[#0c7075f8] border rounded-md p-2 absolute z-10">
-                {message}
-              </div>
-            )}
-            <div className="flex w-full md:flex-row flex-col items-center justify-between md:space-x-3 space-x-0">
-              <div className="flex md:flex-row flex-col items-center justify-center md:space-x-1 space-x-0 p-2">
-                <div className="md:h-11 md:w-11 h-9 w-9 md:pr-1 pr-0">
-                  <Gmail />
-                </div>
-                <p className="md:pt-0 pt-1 md:pb-0 pb-2 md:px-2 px-0">
-                  barrios.g.lautaro@gmail.com
-                </p>
-                <div className="flex md:w-auto w-full items-center justify-center space-x-2">
-                  <button
-                    type="button"
-                    onClick={copyText}
-                    title="Copiar dirección de correo electrónico"
-                    className="md:w-auto w-full bg-[#1d5354] rounded-md py-1 px-2 shadow hover:scale-105 transition-all"
-                  >
-                    Copiar
-                  </button>
-                  <button
-                    type="button"
-                    className="md:w-auto w-full bg-[#1d5354] rounded-md py-1 px-2 shadow hover:scale-105 transition-all"
-                  >
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=barrios.g.lautaro@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Enviar correo electrónico"
-                    >
-                      Enviar
-                    </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article> */}
         </article>
       </div>
     </section>
