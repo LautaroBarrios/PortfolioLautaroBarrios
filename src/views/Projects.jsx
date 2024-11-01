@@ -1,9 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Close } from "../icons";
+import items from "../assets/images/projects/items.js";
 
 const Projects = ({ changeModal }) => {
   const modalRef = useRef(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [hoveredItems, setHoveredItems] = useState({});
+
+  const handleMouseEnter = (id) => {
+    setHoveredItems((prev) => ({ ...prev, [id]: true }));
+  };
+
+  const handleMouseLeave = (id) => {
+    setHoveredItems((prev) => ({ ...prev, [id]: false }));
+  };
 
   const closeModal = () => {
     setIsClosing(true);
@@ -38,7 +48,7 @@ const Projects = ({ changeModal }) => {
       }`}
     >
       <article
-        className="flex flex-col h-full w-full bg-[radial-gradient(circle,_#061516_50%,_#040d0e_100%)] border-[0.5px] border-[#585d5e] lg:w-1/2 md:w-2/3 rounded-2xl p-3 space-y-4"
+        className="flex flex-col max-h-full w-full bg-[radial-gradient(circle,_#061516_50%,_#040d0e_100%)] border-[0.5px] border-[#585d5e] lg:w-1/2 md:w-2/3 rounded-2xl p-3 space-y-4"
         ref={modalRef}
       >
         <div className="flex flex-row items-center justify-between pt-1 px-1">
@@ -52,10 +62,30 @@ const Projects = ({ changeModal }) => {
             <Close />
           </button>
         </div>
-        <ol className="grid md:grid-cols-2 grid-cols-1 gap-4 overflow-auto px-1">
-          <li className="border rounded-md p-4">1</li>
-          <li className="border rounded-md p-4">1</li>
-          
+        <ol className="h-full grid lg:grid-cols-2 grid-cols-1 gap-4 overflow-auto px-1">
+          {items.map((item) => (
+            <li
+              className="flex min-h-[250px] items-center justify-center lg:flex-row flex-col border border-[#585d5e] rounded-md relative"
+              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseLeave={() => handleMouseLeave(item.id)}
+            >
+              {!hoveredItems[item.id] && (
+                <img
+                  src={item?.src}
+                  className="h-full w-full object-cover rounded-md absolute"
+                />
+              )}
+              <div className="flex flex-col h-full py-2 px-4">
+                <h3 className={`text-lg text-[${item.color}]`}>
+                  {item?.title}
+                </h3>
+                <p className={`text-gray-50 text-sm overflow-auto h-full`}>{item?.description}</p>
+                {/* <p className="text-[#c9b0ff]">
+                  {item?.details}
+                </p> */}
+              </div>
+            </li>
+          ))}
         </ol>
       </article>
     </section>

@@ -64,7 +64,7 @@ const Contact = ({ changeModal }) => {
             </button>
           </div>
 
-          <article className="flex flex-col items-center justify-center bg-[#0c7075] shadow p-1 rounded-md">
+          <article className="flex flex-col items-center justify-center bg-[#0c7075] bg-opacity-10 shadow p-1 rounded-md">
             {message && (
               <span className="bg-[#0c7075f8] border rounded-md px-2 py-1 absolute z-10">
                 {message}
@@ -88,7 +88,7 @@ const Contact = ({ changeModal }) => {
                   type="button"
                   onClick={copyText}
                   title="Copiar dirección de correo electrónico"
-                  className="md:w-auto w-full bg-[#ffffff] text-[#0c7075] rounded-md py-[3px] px-2 hover:scale-105 transition-all"
+                  className="md:w-auto w-full bg-[#ffffff] text-[#051a1c] rounded-md py-[3px] px-2 hover:scale-105 transition-all"
                 >
                   Copiar
                 </button>
