@@ -53,7 +53,7 @@ const Contact = ({ changeModal }) => {
           ref={modalRef}
         >
           <div className="flex flex-row items-center justify-between">
-            <h2 className="text-xl">Contact</h2>
+            <h2 className="text-xl font-bold">Contact</h2>
             <button
               type="button"
               onClick={closeModal}

@@ -43,7 +43,7 @@ const AboutMe = ({ changeModal }) => {
           ref={modalRef}
         >
           <div className="flex flex-row items-center justify-between">
-            <h2 className="text-xl">Sobre mí</h2>
+            <h2 className="text-xl font-bold">Sobre mí</h2>
             <button
               type="button"
               onClick={closeModal}
@@ -83,13 +83,13 @@ const AboutMe = ({ changeModal }) => {
                 </a>
               </article>
             </div>
-            <div className="flex flex-col justify-between items-end md:pr-2 text-sm">
-              <p className="orbi-font">
+            <div className="flex flex-col justify-between items-end md:pr-2 md:text-base text-sm">
+              <p>
                 Desarrollador de Córdoba, Argentina, entusiasta de convertir
                 desafíos complejos en soluciones de diseño simples, elegantes y
                 efectivas.
               </p>
-              <p className="orbi-font">
+              <p>
                 Desde interfaces digitales y experiencias interactivas hasta la
                 automatización de procesos y la integración de diseño con
                 tecnología.

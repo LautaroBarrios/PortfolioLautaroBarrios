@@ -1,28 +1,3 @@
-/* ----------Fonts---------- */
-@font-face {
-  font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Bold.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "OrbitronMedium";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: "Orbitron", sans-serif;
-}
-
-.orbi-font {
-  font-family: "OrbitronMedium", sans-serif;
-}
-
 /* ----------Scrollbar Styles---------- */
 
 ::-webkit-scrollbar {
