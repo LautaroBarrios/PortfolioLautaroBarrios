@@ -15,7 +15,7 @@ const Home = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => changeModal("aboutMe")}
-          className="absolute text-bold border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] left-0 top-5 pl-4 pr-8 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-r-full font-bold transition-all"
+          className="absolute text-bold border-y border-[#575d5e] active:border-white xl:w-[10%] lg:w-[15%] sm:w-[20%] w-[50%] left-0 top-5 pl-4 pr-8 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-r-full font-bold transition-all"
         >
           About
         </button>
@@ -24,7 +24,7 @@ const Home = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => changeModal("projects")}
-          className="absolute text-bold border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-24 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full font-bold transition-all"
+          className="absolute text-bold border-y border-[#575d5e] active:border-white xl:w-[10%] lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-24 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full font-bold transition-all"
         >
           Projects
         </button>
@@ -33,7 +33,7 @@ const Home = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => changeModal("contact")}
-          className="absolute text-bold border-y border-[#575d5e] active:border-white lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-5 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full font-bold transition-all"
+          className="absolute text-bold border-y border-[#575d5e] active:border-white xl:w-[10%] lg:w-[15%] sm:w-[20%] w-[50%] right-0 bottom-5 pl-8 pr-4 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-l-full font-bold transition-all"
         >
           Contact
         </button>

@@ -73,6 +73,7 @@ const Projects = ({ changeModal }) => {
           <ol className="h-full grid lg:grid-cols-2 grid-cols-1 gap-4 overflow-auto px-1">
             {items.map((item) => (
               <li
+                key={item.id}
                 className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative"
                 onMouseEnter={() => handleMouseEnter(item.id)}
                 onMouseLeave={() => handleMouseLeave(item.id)}
@@ -144,7 +145,7 @@ const Projects = ({ changeModal }) => {
             </p>
             <ol className="pt-4 px-2 lg:w-2/3 w-[90%] space-y-2">
               <li>
-                <p className="text-[#6ed1d6] text-lg">
+                <p className="text-[#6ed1d6] text-lg font-semibold">
                   Sistema de gestión de empleados y contratos - Municipalidad de
                   la Calera, Córdoba, Argentina (2022).
                 </p>
@@ -158,7 +159,7 @@ const Projects = ({ changeModal }) => {
                 </p>
               </li>
               <li>
-                <p className="text-[#6ed1d6] text-lg">
+                <p className="text-[#6ed1d6] text-lg font-semibold">
                   Sistema de análisis veterinario - (2023).
                 </p>
                 <p className="text-gray-300">
