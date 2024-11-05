@@ -65,7 +65,7 @@ const Projects = ({ changeModal }) => {
         <ol className="h-full grid lg:grid-cols-2 grid-cols-1 gap-4 overflow-auto px-1">
           {items.map((item) => (
             <li
-              className="flex min-h-[250px] items-center justify-center lg:flex-row flex-col border border-[#585d5e] rounded-md relative"
+              className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e] rounded-md relative"
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={() => handleMouseLeave(item.id)}
             >
@@ -75,14 +75,53 @@ const Projects = ({ changeModal }) => {
                   className="h-full w-full object-cover rounded-md absolute"
                 />
               )}
-              <div className="flex flex-col h-full py-2 px-4">
-                <h3 className={`text-lg text-[${item.color}]`}>
-                  {item?.title}
-                </h3>
-                <p className={`text-gray-50 text-sm overflow-auto h-full`}>{item?.description}</p>
+              <div className="flex flex-col h-full py-2 px-4 space-y-1">
+                <div className="flex md:flex-row flex-col md:space-x-0 space-y-1 items-center justify-between">
+                  <h3 className={`text-lg text-[#2cc9d1]`}>{item?.title}</h3>
+                  <button
+                    type="button"
+                    className="text-center border border-[#2cc9d1] text-[#2cc9d1] md:w-auto w-full md:px-2 px-auto rounded-md transition-all active:scale-105"
+                  >
+                    Imágenes
+                  </button>
+                </div>
+
+                <p className={`text-gray-50 text-sm overflow-auto h-full`}>
+                  {item?.description}
+                </p>
                 {/* <p className="text-[#c9b0ff]">
                   {item?.details}
-                </p> */}
+                  </p> */}
+                <div
+                  className={`grid sm:gap-3 gap-2 sm:pt-0 pt-2 w-full ${
+                    item?.web && item?.repo
+                      ? "sm:grid-cols-2 grid-cols-1"
+                      : "grid-cols-1"
+                  }`}
+                >
+                  {item?.web && (
+                    <a
+                      href={item?.web}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Visitar sitio web"
+                      className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
+                    >
+                      Sitio Web
+                    </a>
+                  )}
+                  {item?.repo && (
+                    <a
+                      href={item?.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Visitar repositorio"
+                      className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
+                    >
+                      Repositorio
+                    </a>
+                  )}
+                </div>
               </div>
             </li>
           ))}
