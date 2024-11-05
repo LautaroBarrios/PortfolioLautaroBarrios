@@ -1,3 +1,4 @@
+import ImagesProjects from "./ImagesProjects";
 import Lights from "./Lights";
 
-export { Lights };
+export { ImagesProjects, Lights };

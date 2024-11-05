@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Close } from "../icons";
 import items from "../assets/images/projects/items.js";
+import ImagesProjects from "../components/ImagesProjects.jsx";
 
 const Projects = ({ changeModal }) => {
   const modalRef = useRef(null);
   const [isClosing, setIsClosing] = useState(false);
   const [hoveredItems, setHoveredItems] = useState({});
+  const [images, setImages] = useState(null);
+
+  const handleImages = (id) => {
+    setImages(id);
+  };
 
   const handleMouseEnter = (id) => {
     setHoveredItems((prev) => ({ ...prev, [id]: true }));
@@ -48,8 +54,8 @@ const Projects = ({ changeModal }) => {
       }`}
     >
       <article
-        className="flex flex-col max-h-full w-full bg-[radial-gradient(circle,_#061516_50%,_#040d0e_100%)] border-[0.5px] border-[#585d5e] lg:w-1/2 md:w-2/3 rounded-2xl p-3 space-y-4"
-        ref={modalRef}
+        className="flex flex-col max-h-full w-full bg-[radial-gradient(circle,_#061516_50%,_#040d0e_100%)] border-[0.5px] border-[#585d5e] lg:w-1/2 md:w-2/3 rounded-2xl p-4 space-y-4"
+        ref={images ? null : modalRef}
       >
         <div className="flex flex-row items-center justify-between pt-1 px-1">
           <h2 className="text-xl">Proyectos</h2>
@@ -80,6 +86,7 @@ const Projects = ({ changeModal }) => {
                   <h3 className={`text-lg text-[#2cc9d1]`}>{item?.title}</h3>
                   <button
                     type="button"
+                    onClick={() => handleImages(item?.id)}
                     className="text-center border border-[#2cc9d1] text-[#2cc9d1] md:w-auto w-full md:px-2 px-auto rounded-md transition-all active:scale-105"
                   >
                     Imágenes
@@ -127,6 +134,7 @@ const Projects = ({ changeModal }) => {
           ))}
         </ol>
       </article>
+      {images && <ImagesProjects setImages={setImages} />}
     </section>
   );
 };
