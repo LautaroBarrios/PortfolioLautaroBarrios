@@ -1,10 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import PictureProfile from "../assets/images/PhotoProfile.png";
 import { Close, GitHub, LinkedIn } from "../icons";
+import { useTranslation } from "react-i18next";
 
 const AboutMe = ({ changeModal }) => {
   const modalRef = useRef(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [t] = useTranslation("global");
 
   const closeModal = () => {
     setIsClosing(true);
@@ -43,11 +45,11 @@ const AboutMe = ({ changeModal }) => {
           ref={modalRef}
         >
           <div className="flex flex-row items-center justify-between">
-            <h2 className="text-xl font-bold">Sobre mí</h2>
+            <h2 className="text-xl font-bold">{t("buttons.about")}</h2>
             <button
               type="button"
               onClick={closeModal}
-              title="Cerrar"
+              title={t("buttons.titles.close")}
               className="bg-[#0c7075] active:scale-105 p-0.5 rounded-md transition-all"
             >
               <Close />
@@ -67,7 +69,7 @@ const AboutMe = ({ changeModal }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="md:h-11 md:w-11 h-9 w-9 flex items-center justify-center hover:scale-105 transition-all"
-                  title="Perfil de GitHub"
+                  title="GitHub"
                 >
                   <GitHub />
                 </a>
@@ -77,7 +79,7 @@ const AboutMe = ({ changeModal }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="md:h-11 md:w-11 h-9 w-9 flex items-center justify-center hover:scale-105 transition-all"
-                  title="Perfil de LinkedIn"
+                  title="LinkedIn"
                 >
                   <LinkedIn />
                 </a>
@@ -85,14 +87,10 @@ const AboutMe = ({ changeModal }) => {
             </div>
             <div className="flex flex-col justify-between items-end md:pr-2 md:text-base text-sm">
               <p>
-                Desarrollador de Córdoba, Argentina, entusiasta de convertir
-                desafíos complejos en soluciones de diseño simples, elegantes y
-                efectivas.
+                {t("about.description.p1")}
               </p>
               <p>
-                Desde interfaces digitales y experiencias interactivas hasta la
-                automatización de procesos y la integración de diseño con
-                tecnología.
+                {t("about.description.p2")}
               </p>
             </div>
           </div>

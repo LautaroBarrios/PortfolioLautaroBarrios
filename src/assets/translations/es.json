@@ -1,0 +1,55 @@
+{
+  "buttons": {
+    "about": "Sobre mí",
+    "language": "Lenguaje",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "copy": "Copiar",
+    "see": "Ver",
+    "public": "públicos",
+    "private": "privados",
+    "images": "Imágenes",
+    "titles": {
+      "gmail": "Abrir ventana de gmail",
+      "copy": "Copiar dirección de correo electrónico",
+      "close": "Cerrar ventana"
+    }
+  },
+  "a": {
+    "web": "Sitio web",
+    "repo": "Repositorio"
+  },
+  "home": {
+    "name": "SOY LAUTARO BARRIOS",
+    "slogan": "SU VISIÓN DIGITAL, HECHA REALIDAD.",
+    "cv": "Descargar CV"
+  },
+  "about": {
+    "description": {
+      "p1": "Desarrollador de Córdoba, Argentina, entusiasta de convertir desafíos complejos en soluciones de diseño simples, elegantes y efectivas.",
+      "p2": "Desde interfaces digitales y experiencias interactivas hasta la automatización de procesos y la integración de diseño con tecnología."
+    }
+  },
+  "projects": {
+    "image_editor": {
+      "description": "Este diseñador sirve para base de otros proyectos. Permite agregar un fondo y elementos (imágenes), los cuales pueden ser redimensionados, moverse por todo el contenedor, duplicarlos, fijarlos, eliminarlos. Además de agregar textos con tipografías distintas y colores, además de poder aplicar las mismas características que los elementos. Pudiendo descargar el contenido creado en una imagen PNG."
+    },
+    "code_tutor": {
+      "description": "Code-Tutor es una plataforma en línea orientada a gente de Latinoamérica, cuya función es conectar usuarios con tutores para proyectos de programación de manera independiente."
+    },
+    "games_view": {
+      "description": "GamesView es una plataforma con un diseño basado en las famosas Arcades, donde podes consultar datos de tus juegos favoritos, descubrir nuevos, agregar nuevos, aplicar múltiples filtros para ordenamiento y búsqueda de acuerdo a tus intereses."
+    },
+    "important": "IMPORTANTE",
+    "description": "Links de acceso no disponibles para el público. Para más información ponte en contacto.",
+    "item1": {
+      "title": "Sistema de gestión de empleados y contratos - Municipalidad de la Calera, Córdoba, Argentina (2022).",
+      "description": "Backend para la creación, edición y manejo de datos de empleados de manera segura, haciendo uso de estos para generar contratos y permitir la descarga automáticamente de manera óptima, eficaz y rápida. También elaboré la base de datos y realice la migración a partir de un documento (Excel) que poseía los datos de los mismos."
+    },
+    "item2": {
+      "title": "Sistema de análisis veterinario - (2023).",
+      "description": "Sistema que permite la carga de los datos de análisis para veterinarias, pudiendo generar PDFs con la información del análisis, permitiendo a las veterinarias tener un documento con los datos necesarios del análisis del paciente en un orden, formato accesible y cómodo para las mismas. En este desarrollo pude aprender nuevos conceptos, nuevas herramientas como React-PDF, pulir métodos y otras herramientas de trabajo, además de superar las expectativas del cliente."
+    }
+  },
+  "contact": {}
+}

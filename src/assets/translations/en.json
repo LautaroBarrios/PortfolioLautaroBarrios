@@ -1,0 +1,55 @@
+{
+  "buttons": {
+    "about": "About me",
+    "language": "Language",
+    "projects": "Projects",
+    "contact": "Contact",
+    "copy": "Copy",
+    "see": "See",
+    "public": "publics",
+    "private": "privates",
+    "images": "Images",
+    "titles": {
+      "gmail": "Open gmail window",
+      "copy": "Copy e-mail address",
+      "close": "Close window"
+    }
+  },
+  "a": {
+    "web": "Web site",
+    "repo": "Repository"
+  },
+  "home": {
+    "name": "I AM LAUTARO BARRIOS",
+    "slogan": "YOUR DIGITAL VISION, MADE REALITY.",
+    "cv": "Download CV"
+  },
+  "about": {
+    "description": {
+      "p1": "Developer from Córdoba, Argentina, enthusiastic about turning complex challenges into simple, elegant and effective design solutions..",
+      "p2": "From digital interfaces and interactive experiences to process automation and the integration of design with technology."
+    }
+  },
+  "projects": {
+    "image_editor": {
+      "description": "This designer serves as a basis for other projects. It allows you to add a background and elements (images), which can be resized, moved around the container, duplicated, fixed, deleted. In addition to adding texts with different fonts and colors, besides being able to apply the same characteristics as the elements. Being able to download the content created in a PNG image."
+    },
+    "code_tutor": {
+      "description": "Code-Tutor is an online platform oriented to people in Latin America, whose function is to connect users with tutors for programming projects independently."
+    },
+    "games_view": {
+      "description": "GamesView is a platform with a design based on the famous Arcades, where you can consult data of your favorite games, discover new ones, add new ones, apply multiple filters for sorting and searching according to your interests."
+    },
+    "important": "IMPORTANT",
+    "description": "Access links are not available to the public. For more information please contact us.",
+    "item1": {
+      "title": "Employee and contract management system - Municipality of La Calera, Córdoba, Argentina (2022).",
+      "description": "Backend for the creation, edition and management of employee data in a secure way, making use of these to generate contracts and allow the automatic download in an optimal, efficient and fast way. I also developed the database and performed the migration from a document (Excel) that had the employee data."
+    },
+    "item2": {
+      "title": "Veterinary analysis system - (2023).",
+      "description": "System that allows the loading of analysis data for veterinaries, being able to generate PDFs with the analysis information, allowing the veterinaries to have a document with the necessary data of the patient's analysis in an order, accessible and comfortable format for them. In this development I was able to learn new concepts, new tools such as React-PDF, polish methods and other work tools, in addition to exceeding customer expectations."
+    }
+  },
+  "contact": {}
+}

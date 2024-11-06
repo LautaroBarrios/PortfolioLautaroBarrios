@@ -1,9 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import { Close, Gmail } from "../icons";
+import { useTranslation } from "react-i18next";
 
 const Contact = ({ changeModal }) => {
   const modalRef = useRef(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [t] = useTranslation("global");
 
   const [message, setMessage] = useState("");
   const copyText = () => {
@@ -53,11 +55,11 @@ const Contact = ({ changeModal }) => {
           ref={modalRef}
         >
           <div className="flex flex-row items-center justify-between">
-            <h2 className="text-xl font-bold">Contact</h2>
+            <h2 className="text-xl font-bold">{t("buttons.contact")}</h2>
             <button
               type="button"
               onClick={closeModal}
-              title="Cerrar"
+              title={t("buttons.titles.close")}
               className="bg-[#0c7075] active:scale-105 p-0.5 rounded-md transition-all"
             >
               <Close />
@@ -75,7 +77,7 @@ const Contact = ({ changeModal }) => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=barrios.g.lautaro@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Enviar correo electrónico"
+                title={t("buttons.titles.gmail")}
                 className="md:h-11 md:w-11 h-9 w-9 md:pr-1 pr-0 hover:scale-105 transition-all"
               >
                 <Gmail />
@@ -87,10 +89,10 @@ const Contact = ({ changeModal }) => {
                 <button
                   type="button"
                   onClick={copyText}
-                  title="Copiar dirección de correo electrónico"
+                  title={t("buttons.titles.copy")}
                   className="md:w-auto w-full bg-[#ffffff] text-[#051a1c] rounded-md py-[3px] px-2 hover:scale-105 transition-all"
                 >
-                  Copiar
+                  {t("buttons.copy")}
                 </button>
               </div>
             </div>

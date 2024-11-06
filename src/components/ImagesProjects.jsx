@@ -3,9 +3,11 @@ import { picturesCT } from "../assets/images/projects/indexCT";
 import { picturesGV } from "../assets/images/projects/indexGV";
 import { picturesIE } from "../assets/images/projects/indexIE";
 import { ArrowLeft, ArrowRight, Close } from "../icons";
+import { useTranslation } from "react-i18next";
 
 const ImagesProjects = ({ images, setImages }) => {
   const containerRef = useRef(null);
+  const [t] = useTranslation("global");
   const [isClosing, setIsClosing] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -127,6 +129,7 @@ const ImagesProjects = ({ images, setImages }) => {
           <button
             type="button"
             onClick={() => setIsClosing(true)}
+            title={t("buttons.titles.close")}
             className="bg-[#0c7075] text-white active:scale-95 rounded py-1 px-4 transition-all"
           >
             <Close />

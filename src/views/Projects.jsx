@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Close } from "../icons";
 import items from "../assets/images/projects/items.js";
 import ImagesProjects from "../components/ImagesProjects.jsx";
+import { useTranslation } from "react-i18next";
 
 const Projects = ({ changeModal }) => {
   const modalRef = useRef(null);
+  const [t] = useTranslation("global");
   const [isClosing, setIsClosing] = useState(false);
   const [hoveredItems, setHoveredItems] = useState({});
   const [images, setImages] = useState(null);
@@ -59,11 +61,11 @@ const Projects = ({ changeModal }) => {
         ref={images ? null : modalRef}
       >
         <div className="flex flex-row items-center justify-between pt-1 px-1">
-          <h2 className="text-xl font-bold">Proyectos</h2>
+          <h2 className="text-xl font-bold">{t("buttons.projects")}</h2>
           <button
             type="button"
             onClick={closeModal}
-            title="Cerrar"
+            title={t("buttons.titles.close")}
             className="bg-[#0c7075] active:scale-105 p-0.5 rounded-md transition-all"
           >
             <Close />
@@ -71,7 +73,7 @@ const Projects = ({ changeModal }) => {
         </div>
         {!privateProjects ? (
           <ol className="h-full grid lg:grid-cols-2 grid-cols-1 gap-4 overflow-auto px-1">
-            {items.map((item) => (
+            {items(t).map((item) => (
               <li
                 key={item.id}
                 className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative"
@@ -94,7 +96,7 @@ const Projects = ({ changeModal }) => {
                       onClick={() => handleImages(item?.id)}
                       className="text-center border border-[#2cc9d1] text-[#2cc9d1] md:w-auto w-full md:px-2 px-auto rounded-md transition-all active:scale-105 font-semibold"
                     >
-                      Imágenes
+                      {t("buttons.images")}
                     </button>
                   </div>
 
@@ -114,10 +116,9 @@ const Projects = ({ changeModal }) => {
                         href={item?.web}
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Visitar sitio web"
                         className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
                       >
-                        Sitio Web
+                        {t("a.web")}
                       </a>
                     )}
                     {item?.repo && (
@@ -125,10 +126,9 @@ const Projects = ({ changeModal }) => {
                         href={item?.repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Visitar repositorio"
                         className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
                       >
-                        Repositorio
+                        {t("a.repo")}
                       </a>
                     )}
                   </div>
@@ -138,40 +138,27 @@ const Projects = ({ changeModal }) => {
           </ol>
         ) : (
           <section className="flex flex-col justify-start items-center h-full w-full space-y-1 p-2 z-10 text-center text-white overflow-auto">
-            <h5 className="text-2xl font-bold text-red-50">IMPORTANTE</h5>
+            <h5 className="text-2xl font-bold text-red-50">
+              {t("projects.important")}
+            </h5>
             <p className="text-lg font-bold border-b pb-4 mx-4">
-              Links de acceso no disponibles para el público. Para más
-              información ponte en contacto.
+              {t("projects.description")}
             </p>
             <ol className="pt-4 px-2 lg:w-2/3 w-[90%] space-y-2">
               <li>
                 <p className="text-[#6ed1d6] text-lg font-semibold">
-                  Sistema de gestión de empleados y contratos - Municipalidad de
-                  la Calera, Córdoba, Argentina (2022).
+                  {t("projects.item1.title")}
                 </p>
                 <p className="text-gray-300">
-                  Desarrollé el backend para la creación, edición y manejo de
-                  datos de empleados de manera segura, haciendo uso de estos
-                  para generar contratos y permitir la descarga automáticamente
-                  de manera óptima, eficaz y rápida. También elaboré la base de
-                  datos y realice la migración a partir de un documento (Excel)
-                  que poseía los datos de los mismos.
+                  {t("projects.item1.description")}
                 </p>
               </li>
               <li>
                 <p className="text-[#6ed1d6] text-lg font-semibold">
-                  Sistema de análisis veterinario - (2023).
+                  {t("projects.item2.title")}
                 </p>
                 <p className="text-gray-300">
-                  Desarrollo de un sistema que permite la carga de los datos de
-                  análisis para veterinarias, pudiendo generar PDFs con la
-                  información del análisis, permitiendo a las veterinarias tener
-                  un documento con los datos necesarios del análisis del
-                  paciente en un orden, formato accesible y cómodo para las
-                  mismas. En este desarrollo pude aprender nuevos conceptos,
-                  nuevas herramientas como React-PDF, pulir métodos y
-                  herramientas de trabajo, además de superar las expectativas
-                  del cliente.
+                  {t("projects.item2.description")}
                 </p>
               </li>
             </ol>
@@ -182,7 +169,9 @@ const Projects = ({ changeModal }) => {
           onClick={() => setPrivateProjects(!privateProjects)}
           className="text-center border-[0.5px] border-[#585d5ec2] text-[#ffffff] w-full rounded-md transition-all active:border-[#8d8d8d81] active:scale-95"
         >
-          Ver {privateProjects ? "públicos" : "privados"}
+          {`${t("buttons.see")} ${
+            privateProjects ? t("buttons.public") : t("buttons.private")
+          }`}
         </button>
       </article>
       {images && <ImagesProjects images={images} setImages={setImages} />}
