@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const Home = ({ changeModal }) => {
   const [showButton, setShowButton] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [t, i18n] = useTranslation("global");
 
   setTimeout(() => {
@@ -17,6 +18,8 @@ const Home = ({ changeModal }) => {
       i18n.changeLanguage("en");
     }
   };
+
+  let language = localStorage.getItem("language");
 
   return (
     <section className="flex flex-col items-center justify-center w-full lg:h-screen h-[100dvh] md:p-0 p-4 bg-[radial-gradient(circle,_#f7f9fa_50%,_#040d0e_100%)] animate-fadeInFast">
@@ -34,9 +37,15 @@ const Home = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => changeLanguage()}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           className="absolute text-bold border-y border-[#575d5e] active:border-white xl:w-[10%] lg:w-[15%] sm:w-[20%] w-[50%] left-0 top-24 pl-4 pr-8 py-4 hover:bg-[#061617] animate-fadeIn bg-[#061112] text-white rounded-r-full font-bold transition-all"
         >
-          {t("buttons.language")}
+          {isHovered
+            ? language === "en"
+              ? "English"
+              : "Español"
+            : t("buttons.language")}
         </button>
       )}
       {showButton && (
