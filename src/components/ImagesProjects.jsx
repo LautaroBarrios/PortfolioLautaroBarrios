@@ -16,10 +16,10 @@ const ImagesProjects = ({ images, setImages }) => {
 
   switch (images) {
     case 1:
-      gallery = picturesCT;
+      gallery = picturesIE;
       break;
     case 2:
-      gallery = picturesIE;
+      gallery = picturesCT;
       break;
     case 3:
       gallery = picturesGV;
