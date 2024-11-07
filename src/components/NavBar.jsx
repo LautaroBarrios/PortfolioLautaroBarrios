@@ -2,7 +2,7 @@ import { Box, Language, ProjectsIco, User } from "../icons";
 
 const NavBar = ({ changeModal, t, changeLanguage }) => {
   return (
-    <nav className="absolute text-center lg:bottom-1.5 bottom-0.5 animate-fadeInFast bg-[#061112] border-y border-[#575d5e] px-2 py-1 rounded-full lg:scale-100 scale-75">
+    <nav className="absolute text-center lg:bottom-1.5 bottom-0.5 animate-fadeInFast bg-[#061112] lg:border-y border-y-[1.5px] border-[#575d5e] px-2 py-1 rounded-full lg:scale-100 scale-75">
       <button
         type="button"
         onClick={() => changeModal("aboutMe")}
