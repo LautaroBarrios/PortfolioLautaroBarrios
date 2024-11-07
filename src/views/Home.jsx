@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Lights, NavBar } from "../components";
 import { useTranslation } from "react-i18next";
-import { Box, Language, ProjectsIco, User } from "../icons";
 
 const Home = ({ changeModal }) => {
   const [showButton, setShowButton] = useState(false);
@@ -50,7 +49,7 @@ const Home = ({ changeModal }) => {
         <a
           href="./CV-BarriosLautaroG.pdf"
           download={""}
-          className={`bg-[#f7f9fa] s:text-base text-sm py-1 px-4 rounded-full shadow active:scale-105 transition-all hover:animate-pulse ${
+          className={`bg-[#f7f9fa] s:text-base text-sm lg:py-1 lg:px-4 py-0.5 px-3 rounded-full shadow active:scale-105 transition-all hover:animate-pulse ${
             !showButton ? "animate-fadeIn" : ""
           }`}
         >
