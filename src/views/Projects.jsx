@@ -82,7 +82,7 @@ const Projects = ({ changeModal }) => {
             {items(t).map((item) => (
               <li
                 key={item.id}
-                className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative"
+                className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative animate-fadeIn"
                 onMouseEnter={() => handleMouseEnter(item.id)}
                 onMouseLeave={() => handleMouseLeave(item.id)}
               >
@@ -118,7 +118,7 @@ const Projects = ({ changeModal }) => {
                       onClick={handleShowTech}
                       className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
                     >
-                      Tecnologías
+                      {t("buttons.technologies")}
                     </button>
                     <div
                       className={`grid gap-2 sm:pt-0 pt-2 w-full ${
@@ -184,7 +184,7 @@ const Projects = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => setPrivateProjects(!privateProjects)}
-          className="text-center border-[0.5px] border-[#585d5ec2] text-[#ffffff] w-full rounded-md transition-all active:border-[#8d8d8d81] active:scale-95"
+          className="text-center border-[0.5px] border-[#0c7075] bg-[#0c7075] text-[#ffffff] w-full rounded-md transition-all active:border-[#8d8d8d81] active:scale-95"
         >
           {`${t("buttons.see")} ${
             privateProjects ? t("buttons.public") : t("buttons.private")

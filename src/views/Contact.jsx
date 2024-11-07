@@ -13,10 +13,10 @@ const Contact = ({ changeModal }) => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        setMessage("Texto copiado!");
+        setMessage(t("contact.text_copy"));
         setTimeout(() => setMessage(""), 2000);
       })
-      .catch((err) => console.error("Error al copiar el texto:", err));
+      .catch((err) => console.error(t("contact.text_not_copy"), err));
   };
   const closeModal = () => {
     setIsClosing(true);
@@ -68,7 +68,7 @@ const Contact = ({ changeModal }) => {
 
           <article className="flex flex-col items-center justify-center bg-[#0c7075] bg-opacity-10 shadow p-1 rounded-md">
             {message && (
-              <span className="bg-[#0c7075f8] border rounded-md px-2 py-1 absolute z-10">
+              <span className="bg-[#032224f8] border rounded-md px-2 py-1 absolute z-10">
                 {message}
               </span>
             )}
@@ -97,7 +97,6 @@ const Contact = ({ changeModal }) => {
               </div>
             </div>
           </article>
-          {/* <p className="text-sm text-center">sino</p> */}
         </article>
       </div>
     </section>

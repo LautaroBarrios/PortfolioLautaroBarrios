@@ -1,0 +1,45 @@
+import { Box, Language, ProjectsIco, User } from "../icons";
+
+const NavBar = ({ changeModal, t, changeLanguage }) => {
+  return (
+    <nav className="absolute text-center bottom-1.5 animate-fadeInFast bg-[#061112] border-y border-[#575d5e] px-2 py-1 rounded-full">
+      <button
+        type="button"
+        onClick={() => changeModal("aboutMe")}
+        title={t("buttons.about")}
+        className="text-bold m-1 active:border-white text-white rounded-full border-y hover:bg-[#061617] border-[#575d5e] active:scale-95 p-3 font-bold transition-all hover:scale-105"
+      >
+        <User />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => changeModal("projects")}
+        title={t("buttons.projects")}
+        className="text-bold m-1 active:border-white text-white rounded-full border-y hover:bg-[#061617] border-[#575d5e] active:scale-95 p-3 font-bold transition-all hover:scale-105"
+      >
+        <ProjectsIco />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => changeModal("contact")}
+        title={t("buttons.contact")}
+        className="text-bold m-1 active:border-white text-white rounded-full border-y hover:bg-[#061617] border-[#575d5e] active:scale-95 p-3 font-bold transition-all hover:scale-105"
+      >
+        <Box />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => changeLanguage()}
+        title={t("buttons.language")}
+        className="text-bold m-1 active:border-white text-white rounded-full border-y hover:bg-[#061617] border-[#575d5e] active:scale-95 p-3 font-bold transition-all hover:scale-105"
+      >
+        <Language />
+      </button>
+    </nav>
+  );
+};
+
+export default NavBar;

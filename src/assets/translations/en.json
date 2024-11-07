@@ -9,6 +9,7 @@
     "public": "publics",
     "private": "privates",
     "images": "Images",
+    "technologies": "Technologies",
     "titles": {
       "gmail": "Open gmail window",
       "copy": "Copy e-mail address",
@@ -16,8 +17,8 @@
     }
   },
   "a": {
-    "web": "Web site",
-    "repo": "Repository"
+    "repo": "Repository",
+    "web": "Web site"
   },
   "home": {
     "name": "I AM LAUTARO BARRIOS",
@@ -49,7 +50,16 @@
     "item2": {
       "title": "Veterinary analysis system - (2023).",
       "description": "System that allows the loading of analysis data for veterinaries, being able to generate PDFs with the analysis information, allowing the veterinaries to have a document with the necessary data of the patient's analysis in an order, accessible and comfortable format for them. In this development I was able to learn new concepts, new tools such as React-PDF, polish methods and other work tools, in addition to exceeding customer expectations."
+    },
+    "technologies": {
+      "language": "𝗟𝗲𝗻𝗴𝘂𝗮𝗴𝗲𝘀",
+      "database": "𝗗𝗮𝘁𝗮𝗕𝗮𝘀𝗲",
+      "tools": "𝗧𝗼𝗼𝗹𝘀",
+      "agiles": "𝗔𝗴𝗶𝗹𝗲𝘀"
     }
   },
-  "contact": {}
+  "contact": {
+    "text_copy": "Text copied",
+    "text_not_copy": "Error while copying text:"
+  }
 }

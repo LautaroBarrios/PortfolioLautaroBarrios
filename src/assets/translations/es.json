@@ -9,6 +9,7 @@
     "public": "públicos",
     "private": "privados",
     "images": "Imágenes",
+    "technologies":"Tecnologías",
     "titles": {
       "gmail": "Abrir ventana de gmail",
       "copy": "Copiar dirección de correo electrónico",
@@ -16,8 +17,8 @@
     }
   },
   "a": {
-    "web": "Sitio web",
-    "repo": "Repositorio"
+    "repo": "Repositorio",
+    "web": "Sitio web"
   },
   "home": {
     "name": "SOY LAUTARO BARRIOS",
@@ -49,7 +50,16 @@
     "item2": {
       "title": "Sistema de análisis veterinario - (2023).",
       "description": "Sistema que permite la carga de los datos de análisis para veterinarias, pudiendo generar PDFs con la información del análisis, permitiendo a las veterinarias tener un documento con los datos necesarios del análisis del paciente en un orden, formato accesible y cómodo para las mismas. En este desarrollo pude aprender nuevos conceptos, nuevas herramientas como React-PDF, pulir métodos y otras herramientas de trabajo, además de superar las expectativas del cliente."
+    },
+    "technologies": {
+      "language": "𝗟𝗲𝗻𝗴𝘂𝗮𝗷𝗲𝘀",
+      "database": "𝗕𝗮𝘀𝗲 𝗱𝗲 𝗗𝗮𝘁𝗼𝘀",
+      "tools": "𝗛𝗲𝗿𝗿𝗮𝗺𝗶𝗲𝗻𝘁𝗮𝘀",
+      "agiles": "𝗔́𝗴𝗶𝗹𝗲𝘀"
     }
   },
-  "contact": {}
+  "contact": {
+    "text_copy":"Texto copiado",
+    "text_not_copy":"Error al copiar el texto:"
+  }
 }
