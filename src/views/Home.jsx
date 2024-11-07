@@ -32,7 +32,7 @@ const Home = ({ changeModal }) => {
       )}
 
       <article className="flex flex-col bg-[radial-gradient(circle,_#061516_30%,_#040d0e_100%)] 2xl:p-52 xl:p-40 lg:p-20 p-10 max-w-[100vw] lg:max-w-[50vw] aspect-square rounded-full items-center justify-center space-y-1">
-        <h1 className="sm:text-4xl s:text-xl text-lg text-center text-gray-50 animate-fadeIn cursor-default font-bold">
+        <h1 className="lg:text-4xl sm:text-3xl s:text-xl text-lg text-center text-gray-50 animate-fadeIn cursor-default font-bold">
           {t("home.name")}
         </h1>
         <div className="flex flex-col items-center justify-center w-full space-y-1 animate-fadeInMedium">
