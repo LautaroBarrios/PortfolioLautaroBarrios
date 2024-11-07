@@ -11,6 +11,7 @@ const Projects = ({ changeModal }) => {
   const [hoveredItems, setHoveredItems] = useState({});
   const [images, setImages] = useState(null);
   const [privateProjects, setPrivateProjects] = useState(false);
+  const [showTech, setShowTech] = useState(false);
 
   const handleImages = (id) => {
     setImages(id);
@@ -18,6 +19,7 @@ const Projects = ({ changeModal }) => {
 
   const handleMouseEnter = (id) => {
     setHoveredItems((prev) => ({ ...prev, [id]: true }));
+    setShowTech(false);
   };
 
   const handleMouseLeave = (id) => {
@@ -32,6 +34,10 @@ const Projects = ({ changeModal }) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       closeModal();
     }
+  };
+
+  const handleShowTech = () => {
+    setShowTech(!showTech);
   };
 
   useEffect(() => {
@@ -100,37 +106,48 @@ const Projects = ({ changeModal }) => {
                     </button>
                   </div>
 
-                  <p className={`text-cyan-50 text-sm overflow-auto h-full`}>
-                    {item?.description}
+                  <p
+                    className={`text-cyan-50 text-sm overflow-auto h-full whitespace-pre-line`}
+                  >
+                    {!showTech ? item?.description : item?.technologies}
                   </p>
 
-                  <div
-                    className={`grid sm:gap-3 gap-2 sm:pt-0 pt-2 w-full ${
-                      item?.web && item?.repo
-                        ? "sm:grid-cols-2 grid-cols-1"
-                        : "grid-cols-1"
-                    }`}
-                  >
-                    {item?.web && (
-                      <a
-                        href={item?.web}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
-                      >
-                        {t("a.web")}
-                      </a>
-                    )}
-                    {item?.repo && (
-                      <a
-                        href={item?.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
-                      >
-                        {t("a.repo")}
-                      </a>
-                    )}
+                  <div className="flex flex-col w-full space-y-2">
+                    <button
+                      type="button"
+                      onClick={handleShowTech}
+                      className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
+                    >
+                      Tecnologías
+                    </button>
+                    <div
+                      className={`grid gap-2 sm:pt-0 pt-2 w-full ${
+                        item?.web && item?.repo
+                          ? "sm:grid-cols-2 grid-cols-1"
+                          : "grid-cols-1"
+                      }`}
+                    >
+                      {item?.web && (
+                        <a
+                          href={item?.web}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
+                        >
+                          {t("a.web")}
+                        </a>
+                      )}
+                      {item?.repo && (
+                        <a
+                          href={item?.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-center border border-[#2cc9d1] text-[#2cc9d1] w-full px-auto rounded-md transition-all active:scale-105"
+                        >
+                          {t("a.repo")}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </li>
