@@ -1,13 +1,13 @@
 /* ----------Scrollbar Styles---------- */
 
 ::-webkit-scrollbar {
-  background-color: rgba(11, 95, 99, 0.966);
+  background-color: #f7f9faa4;
   width: 10px;
   border: 3.5px solid #040e0f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0c7075;
+  background-color: #f7f9fa;
   border-radius: 5px;
 }
 
