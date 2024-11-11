@@ -8,7 +8,7 @@ const Home = ({ changeModal }) => {
 
   setTimeout(() => {
     setShowButton(true);
-  }, 2100);
+  }, 1800);
 
   const changeLanguage = () => {
     if (localStorage.getItem("i18nextLng") === "en") {
