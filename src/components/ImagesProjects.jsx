@@ -99,7 +99,7 @@ const ImagesProjects = ({ images, setImages }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="flex h-auto w-full overflow-x-hidden animate-fadeInFast"
+          className="flex snap-x snap-mandatory h-auto w-full overflow-x-hidden scroll-smooth animate-fadeInFast"
         >
           {gallery.length > 0 ? (
             gallery.map((item, index) => (
@@ -107,7 +107,7 @@ const ImagesProjects = ({ images, setImages }) => {
                 key={index}
                 src={item}
                 alt={`image-${index}`}
-                className="h-full min-w-full snap-center object-contain"
+                className="h-full min-w-full object-contain"
               />
             ))
           ) : (
