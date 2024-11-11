@@ -99,7 +99,7 @@ const ImagesProjects = ({ images, setImages }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="flex snap-x snap-mandatory h-auto w-full overflow-x-hidden scroll-smooth animate-fadeInFast"
+          className="flex h-auto w-full overflow-x-hidden animate-fadeInFast"
         >
           {gallery.length > 0 ? (
             gallery.map((item, index) => (
