@@ -187,7 +187,7 @@ const Projects = ({ changeModal }) => {
         <button
           type="button"
           onClick={() => setPrivateProjects(!privateProjects)}
-          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full rounded-md transition-all active:scale-95"
+          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full rounded-md transition-all active:scale-95 font-semibold"
         >
           {`${t("buttons.see")} ${
             privateProjects ? t("buttons.public") : t("buttons.private")
