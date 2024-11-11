@@ -12,6 +12,7 @@ const Projects = ({ changeModal }) => {
   const [images, setImages] = useState(null);
   const [privateProjects, setPrivateProjects] = useState(false);
   const [showTech, setShowTech] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const handleImages = (id) => {
     setImages(id);
@@ -38,6 +39,10 @@ const Projects = ({ changeModal }) => {
 
   const handleShowTech = () => {
     setShowTech(!showTech);
+  };
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
 
   useEffect(() => {
@@ -77,13 +82,16 @@ const Projects = ({ changeModal }) => {
             {items(t).map((item) => (
               <li
                 key={item.id}
-                className="flex min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative animate-fadeIn"
+                className={`${
+                  loadedImages[item.id] ? "flex" : "hidden"
+                } min-h-[280px] items-center justify-center lg:flex-row flex-col border border-[#585d5e3a] hover:border-[#585d5e] rounded-md relative animate-fadeInFast`}
                 onMouseEnter={() => handleMouseEnter(item.id)}
                 onMouseLeave={() => handleMouseLeave(item.id)}
               >
                 {!hoveredItems[item.id] && (
                   <img
                     src={item?.src}
+                    onLoad={() => handleImageLoad(item.id)}
                     className="h-full w-full object-cover rounded-md absolute"
                   />
                 )}
