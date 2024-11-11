@@ -107,7 +107,7 @@ const ImagesProjects = ({ images, setImages }) => {
                 key={index}
                 src={item}
                 alt={`image-${index}`}
-                className="h-full min-w-full snap-center object-contain"
+                className="h-full min-w-full snap-center object-contain animate-fadeIn"
               />
             ))
           ) : (
