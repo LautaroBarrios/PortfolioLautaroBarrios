@@ -102,7 +102,7 @@ const Projects = ({ changeModal }) => {
                   </div>
 
                   <p
-                    className={`text-gray-200 text-sm overflow-auto h-full whitespace-pre-line`}
+                    className={`text-gray-200 text-sm overflow-auto h-full px-1 py-0.5 whitespace-pre-line`}
                   >
                     {!showTech ? item?.description : item?.technologies}
                   </p>
