@@ -111,12 +111,12 @@ const Projects = ({ changeModal }) => {
                     <button
                       type="button"
                       onClick={handleShowTech}
-                      className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105"
+                      className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105 font-semibold"
                     >
                       {t("buttons.technologies")}
                     </button>
                     <div
-                      className={`grid gap-2 sm:pt-0 pt-2 w-full ${
+                      className={`grid gap-2 w-full ${
                         item?.web && item?.repo
                           ? "sm:grid-cols-2 grid-cols-1"
                           : "grid-cols-1"
@@ -127,7 +127,7 @@ const Projects = ({ changeModal }) => {
                           href={item?.web}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105"
+                          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105 font-semibold"
                         >
                           {t("a.web")}
                         </a>
@@ -137,7 +137,7 @@ const Projects = ({ changeModal }) => {
                           href={item?.repo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105"
+                          className="text-center bg-[#f7f9fa] text-[#040d0e] w-full px-auto rounded-md transition-all active:scale-105 font-semibold"
                         >
                           {t("a.repo")}
                         </a>
