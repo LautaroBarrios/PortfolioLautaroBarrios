@@ -8,7 +8,7 @@ const Close = () => {
     >
       <g
         fill="none"
-        stroke="#ffffff"
+        stroke="#040d0e"
         strokeDasharray="16"
         strokeDashoffset="16"
         strokeLinecap="round"

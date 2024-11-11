@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
-import { Close, Gmail } from "../icons";
+import { Gmail } from "../icons";
 import { useTranslation } from "react-i18next";
+import { HeaderModal } from "../components";
 
 const Contact = ({ changeModal }) => {
   const modalRef = useRef(null);
@@ -54,17 +55,11 @@ const Contact = ({ changeModal }) => {
           className="bg-[radial-gradient(circle,_#061516_50%,_#040d0e_100%)] 2xl:w-1/3 xl:w-1/2 lg:w-1/2 md:w-2/3 rounded-2xl px-4 pt-4 pb-5 space-y-4 overflow-auto border-[0.5px] border-[#585d5e]"
           ref={modalRef}
         >
-          <div className="flex flex-row items-center justify-between">
-            <h2 className="text-xl font-bold">{t("buttons.contact")}</h2>
-            <button
-              type="button"
-              onClick={closeModal}
-              title={t("buttons.titles.close")}
-              className="bg-[#0c7075] active:scale-105 p-0.5 rounded-md transition-all"
-            >
-              <Close />
-            </button>
-          </div>
+          <HeaderModal
+            title={t("buttons.contact")}
+            buttonClose={t("buttons.titles.close")}
+            closeModal={closeModal}
+          />
 
           <article className="flex flex-col items-center justify-center bg-[#0c7075] bg-opacity-10 shadow p-1 rounded-md">
             {message && (
@@ -90,7 +85,7 @@ const Contact = ({ changeModal }) => {
                   type="button"
                   onClick={copyText}
                   title={t("buttons.titles.copy")}
-                  className="md:w-auto w-full bg-[#ffffff] text-[#051a1c] rounded-md py-[3px] px-2 hover:scale-105 transition-all"
+                  className="md:w-auto w-full bg-[#ffffff] text-[#051a1c] rounded-md py-[3px] px-2 hover:scale-105 transition-all font-bold"
                 >
                   {t("buttons.copy")}
                 </button>
