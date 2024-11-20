@@ -122,7 +122,7 @@ const ImagesProjects = ({ images, setImages }) => {
             type="button"
             onClick={handlePrevious}
             aria-label="Previous Image"
-            className="md:flex hidden bg-[#f7f9fa] text-white active:scale-95 rounded py-1.5 px-6 transition-all"
+            className="bg-[#f7f9fa] text-white active:scale-95 rounded py-1.5 px-6 transition-all"
           >
             <ArrowLeft />
           </button>
@@ -138,7 +138,7 @@ const ImagesProjects = ({ images, setImages }) => {
             type="button"
             onClick={handleNext}
             aria-label="Next Image"
-            className="md:flex hidden bg-[#f7f9fa] text-white active:scale-95 rounded py-1.5 px-6 transition-all"
+            className="bg-[#f7f9fa] text-white active:scale-95 rounded py-1.5 px-6 transition-all"
           >
             <ArrowRight />
           </button>
