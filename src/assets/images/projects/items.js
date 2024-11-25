@@ -1,6 +1,6 @@
-import CodeTutor from "./code_tutor/CodeTutor_Landing.png";
-import GamesView from "./games_view/GamesView_Landing.png";
-import ImageEditor from "./image_editor/ImageEditor.png";
+import CodeTutor from "./code_tutor/CodeTutor.webp";
+import GamesView from "./games_view/GamesView.webp";
+import ImageEditor from "./image_editor/ImageEditor.webp";
 
 const items = (t) => [
   {
