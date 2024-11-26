@@ -35,26 +35,6 @@
     opacity: 0;
   }
 }
-.transition-transform {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-100 {
-  opacity: 1;
-}
-
-.scale-90 {
-  transform: scale(0.9);
-}
-
-.scale-100 {
-  transform: scale(1);
-}
-
 
 .animate-fadeInFast {
   animation: fadeIn 0.3s forwards;

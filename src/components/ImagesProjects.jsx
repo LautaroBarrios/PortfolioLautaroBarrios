@@ -78,7 +78,7 @@ const ImagesProjects = ({ images, setImages }) => {
               key={currentImageIndex}
               src={gallery[currentImageIndex]}
               alt={`image-${currentImageIndex}`}
-              className={`h-full min-w-full object-contain transition-transform duration-300 ${
+              className={`h-full min-w-full object-contain transform transition duration-300 ease-in-out ${
                 isTransitioning ? "opacity-0 scale-90" : "opacity-100 scale-100"
               }`}
             />
