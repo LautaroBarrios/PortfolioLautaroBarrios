@@ -9,8 +9,8 @@ const ImagesProjects = ({ images, setImages }) => {
   const containerRef = useRef(null);
   const [t] = useTranslation("global");
   const [isClosing, setIsClosing] = useState(false);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   let gallery = null;
 
@@ -24,59 +24,14 @@ const ImagesProjects = ({ images, setImages }) => {
     case 3:
       gallery = picturesGV;
       break;
-
     default:
       gallery = [];
       break;
   }
 
-  const handleNext = () => {
-    if (containerRef.current) {
-      const width = containerRef.current.getBoundingClientRect().width;
-      const maxScrollLeft = width * (picturesCT.length - 1);
-      const currentScrollLeft = containerRef.current.scrollLeft;
-
-      if (currentScrollLeft >= maxScrollLeft) {
-        containerRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        containerRef.current.scrollBy({ left: width, behavior: "smooth" });
-      }
-    }
-  };
-
-  const handlePrevious = () => {
-    if (containerRef.current) {
-      const width = containerRef.current.getBoundingClientRect().width;
-      const currentScrollLeft = containerRef.current.scrollLeft;
-
-      if (currentScrollLeft <= 0) {
-        containerRef.current.scrollTo({
-          left: width * (picturesCT.length - 1),
-          behavior: "smooth",
-        });
-      } else {
-        containerRef.current.scrollBy({ left: -width, behavior: "smooth" });
-      }
-    }
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) {
-      handleNext();
-    }
-
-    if (touchStart - touchEnd < -50) {
-      handlePrevious();
-    }
-  };
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [images]);
 
   useEffect(() => {
     if (isClosing) {
@@ -87,6 +42,26 @@ const ImagesProjects = ({ images, setImages }) => {
     }
   }, [isClosing]);
 
+  const handlePrevious = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex > 0 ? prevIndex - 1 : gallery.length - 1
+      );
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex < gallery.length - 1 ? prevIndex + 1 : 0
+      );
+      setIsTransitioning(false);
+    }, 300);
+  };
+
   return (
     <section
       className={`flex items-center justify-center w-full h-full top-0 left-0 absolute z-50 bg-black bg-opacity-90 p-6 ${
@@ -96,20 +71,17 @@ const ImagesProjects = ({ images, setImages }) => {
       <article className="flex flex-col items-center justify-center w-full h-full">
         <div
           ref={containerRef}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          className="flex snap-x snap-mandatory h-auto w-full overflow-x-hidden scroll-smooth animate-fadeInFast"
+          className="flex h-auto w-full overflow-hidden relative"
         >
           {gallery.length > 0 ? (
-            gallery.map((item, index) => (
-              <img
-                key={index}
-                src={item}
-                alt={`image-${index}`}
-                className="h-full min-w-full snap-center object-contain animate-fadeIn"
-              />
-            ))
+            <img
+              key={currentImageIndex}
+              src={gallery[currentImageIndex]}
+              alt={`image-${currentImageIndex}`}
+              className={`h-full min-w-full object-contain transition-transform duration-300 ${
+                isTransitioning ? "opacity-0 scale-90" : "opacity-100 scale-100"
+              }`}
+            />
           ) : (
             <p className="text-center w-full">No images available</p>
           )}
